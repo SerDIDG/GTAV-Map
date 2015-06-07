@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Interactive GTA V Glitch map</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+	<title>GTA V: Easter Eggs Map - HS Top</title>
 	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,100,300,500">
 	<link rel="stylesheet" href="fontawesome/css/font-awesome.css">
 	<link rel="stylesheet" href="style.css">
@@ -14,40 +15,10 @@
 	<script src="//www.google.com/jsapi"></script>
 	<script src="//maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
 	<script src="js/app.js"></script>
-	<script>
-	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-	  ga('create', 'UA-52712132-1', 'auto');
-	  ga('require', 'displayfeatures');
-	  ga('send', 'pageview');
-
-	</script>
-
-	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 </head>
-<body class="">
-
-	<header>
-		<p class="left"><a href="//gta5-map.github.io/">Interactive GTA V Glitch map</a></p>
-		<ul class="right">
-			<li class="social-reddit"><a href="http://www.reddit.com/r/gtaglitches/comments/29e25u/release_interactive_gta_v_glitch_and_wall_breach/" target="_blank"><img src="icons/reddit.png" width="20px" alt="Upvote on reddit" /></a></li>
-			<li class="social-github"><iframe src="http://ghbtns.com/github-btn.html?user=gta5-map&repo=gta5-map.github.io&type=follow" allowtransparency="true" frameborder="0" scrolling="0" width="128" height="20"></iframe></li>
-			<li class="social-twitter"><a href="https://twitter.com/frdmn" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></li>
-		</ul>
-	</header>
-
-	<div id="tour-nav">
-		<a href="#" class="left">&laquo; <span id="tour-prev"></span></a>
-		<h3>Nuclear Waste Tour</h3>
-		<a href="#" class="right"><span id="tour-next"></span> &raquo;</a>
-	</div>
+<body>
 
 	<div id="map" style="background:#1862ad;"></div>
-
-	<div id="tour-info"></div>
 
 	<script type="x/template" id="categoriesTemplate">
 		{{#each categories}}
@@ -55,7 +26,10 @@
 				<h3>{{name}}</h3>
 				<ul>
 					{{#each types}}
-						<li><label><input type="checkbox" {{#if enabled}}checked{{/if}} value="{{name}}"> <img src="{{assetsUrl}}icons/{{icon}}"> {{name}}</label> <a href="#" class="details" data-name="{{name}}"><i class="icon-chevron-sign-right"></i></a> <!--<a href="#tour" class="tt"></a>--></li>
+						<li>
+                            <a href="#" class="details" data-name="{{name}}"><i class="icon-chevron-sign-right"></i></a>
+                            <label><input type="checkbox" {{#if enabled}}checked{{/if}} value="{{name}}"> <img src="{{assetsUrl}}icons/{{icon}}"> {{name}}</label
+                        </li>
 					{{/each}}
 				</ul>
 			</section>

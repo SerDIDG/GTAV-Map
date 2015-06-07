@@ -17,39 +17,11 @@ $(function() {
 	onResize();
 
 	$(window).resize(onResize);
-
-
-	// window.isTourMode = false;
-
-	// if (window.location.hash == '#tour') {
-	// 	$('body').addClass('tour');
-	// 	window.isTourMode = true;
-	// }
-	// else {
-	// 	$('body').removeClass('tour');
-	// 	window.isTourMode = false;
-	// 	// $('#map').css({position:'absolute'});
-	// }
-
-	// $(window).on('hashchange', function() {
-	// 	if (window.location.hash == '#tour') {
-	// 		$('body').addClass('tour');
-	// 		$('#map').css({position:'relative'});
-	// 		window.isTourMode = true;
-	// 		var x = locations.findWhere({ type: 'Nuclear Waste' }); 
-	// 		Vent.trigger('location:clicked', x, true);
-	// 	}
-	// 	else {
-	// 		$('body').removeClass('tour');	
-	// 		$('#map').css({position:'absolute'});
-	// 		window.isTourMode = false;
-	// 	}
-	// });
 	
 	var currentMarker;
 	
 	var assetsUrl = function() {
-		return window.location.hostname == 'localhost' ? '' : 'http://gta5-map.github.io/';
+		return window.location.hostname == 'localhost' ? '' : 'http://serdidg.github.io/GTAV-Map/';
 	};
 
 	Handlebars.registerHelper('assetsUrl', assetsUrl);
@@ -139,24 +111,12 @@ $(function() {
 	});
 
 	var categories = window.cats = new CategoriesCollection([
-		{
-			name: 'Glitches',
-			icon: 'General/glitches.png',
-			type: 'General',
-			enabled: true
-		},
-		{
-			name: 'Wall breaches',
-			icon: 'General/wall-breach.png',
-			type: 'General',
-			enabled: true
-		},
-		{
-			name: 'Vehicles',
-			icon: 'General/cars.png',
-			type: 'General',
-			enabled: true
-		}
+        {
+            name: 'Easter Eggs',
+            icon: 'General/easter-eggs.png',
+            type: 'General',
+            enabled: true
+        }
 	]);
 
 	var CategoriesView = Backbone.View.extend({
@@ -189,7 +149,7 @@ $(function() {
 			}
 			else {
 				Vent.trigger('locations:invisible', models);
-			}	
+			}
 		},
 
 		showDetails: function(e) {
@@ -261,7 +221,8 @@ $(function() {
 			this.mapOptions = {
 				center: new google.maps.LatLng(66, -125),
 				zoom: 4,
-				disableDefaultUI: true,
+				disableDefaultUI: false,
+                streetViewControl: false,
 				mapTypeControl: true,
 				mapTypeControlOptions: { mapTypeIds: _.keys(this.mapDetails) },
 				mapTypeId: this.mapType
@@ -410,44 +371,25 @@ $(function() {
 		},
 
 		popupLocation: function(location, panTo) {
-			// if (window.isTourMode) {
-			// 	$('#tour-info').html(this.popupTemplate(location.toJSON()));
-			// 	var n = locations.at(locations.indexOf(location) + 1);
-			// 	if (n) {
-			// 		$('#tour-next').text(n.get('title'));
-			// 	}
-			// 	var p = locations.at(locations.indexOf(location) - 1);
-			// 	if (p) {
-			// 		$('#tour-prev').text(p.get('title'));
-			// 	}
+            var infoWindow = new google.maps.InfoWindow({
+                content: this.popupTemplate(location.toJSON())
+            });
 
-			// 	if (panTo) {
-			// 		this.map.panTo(location.get('marker').getPosition());
-			// 		this.map.setZoom(5);
-			// 	}
-			// }
-			// else {
+            infoWindow.setOptions({
+                maxHeight: 400
+            });
 
-				var infoWindow = new google.maps.InfoWindow({
-					content: this.popupTemplate(location.toJSON()),
-				});
+            if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+                infoWindow.setOptions({
+                    maxWidth: 180,
+                    maxHeight: 300
+                });
+            }
 
-			    infoWindow.setOptions({
-			        maxHeight: 400
-			    });
+            infoWindow.open(this.map, location.get('marker'));
 
-				if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-				    infoWindow.setOptions({
-				        maxWidth: 180,
-			        	maxHeight: 300
-				    });
-				}
-
-				infoWindow.open(this.map, location.get('marker'));
-
-				this.closePopupLocation();
-				this.currentInfoWindow = infoWindow;
-			// }
+            this.closePopupLocation();
+            this.currentInfoWindow = infoWindow;
 		},
 
 		closePopupLocation: function() {
@@ -470,7 +412,6 @@ $(function() {
 
 	locations.fetch().done(function() {
 		mapView.render();
-		categoriesView.render();
 
 		categories.chain()
 				  .filter(function(c) { return c.get('enabled'); })
