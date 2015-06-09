@@ -1,17 +1,257 @@
 [
   {
-    "id":1,
-    "type":"Easter Eggs",
-    "title":"Obey Tailgator",
-    "notes":"You can find Michaels story car (Audi A6/A8) on the parking lot of the golf course.",
-    "order":1,
-    "lat":69.908,
-    "lng":-138.230,
-    "video":{
-      "yt_id":"IdYI9VdsqT0",
-      "yt_user":"urparanoid",
-      "start":"2:13",
-      "end":"2:51"
+    "id": 14,
+    "type": "Easter Eggs",
+    "title": "Dead Island reference",
+    "notes": "",
+    "order": 1,
+    "lat": 64.435,
+    "lng": -123.596,
+    "video": {
+      "yt_id": "OjvAKq0ESZQ",
+      "yt_user": "guide4left",
+      "start": "0:32",
+      "end": "0:48"
+    }
+  },
+  {
+    "id": 13,
+    "type": "Easter Eggs",
+    "title": "Portal reference",
+    "notes": "",
+    "order": 1,
+    "lat": 70.282,
+    "lng": -132.385,
+    "video": {
+      "yt_id": "OjvAKq0ESZQ",
+      "yt_user": "guide4left",
+      "start": "0:48",
+      "end": "1:09"
+    }
+  },
+  {
+    "id": 12,
+    "type": "Easter Eggs",
+    "title": "GTA:VC reference",
+    "notes": "",
+    "order": 1,
+    "lat": 69.283,
+    "lng": -124.783,
+    "video": {
+      "yt_id": "OjvAKq0ESZQ",
+      "yt_user": "guide4left",
+      "start": "1:09",
+      "end": "1:26"
+    }
+  },
+  {
+    "id": 11,
+    "type": "Easter Eggs",
+    "title": "Chiken",
+    "notes": "",
+    "order": 1,
+    "lat": 81.792,
+    "lng": -120.531,
+    "video": {
+      "yt_id": "OjvAKq0ESZQ",
+      "yt_user": "guide4left",
+      "start": "1:26",
+      "end": "1:41"
+    }
+  },
+  {
+    "id": 10,
+    "type": "Easter Eggs",
+    "title": "Bigfoot",
+    "notes": "Available in Predator mission only",
+    "order": 1,
+    "lat": 80.244,
+    "lng": -139.351,
+    "video": {
+      "yt_id": "OjvAKq0ESZQ",
+      "yt_user": "guide4left",
+      "start": "1:41",
+      "end": "2:03"
+    }
+  },
+  {
+    "id": 9,
+    "type": "Easter Eggs",
+    "title": "Niko Bellic",
+    "notes": "Available if Jimmy seats at kitchen with laptop",
+    "order": 1,
+    "lat": 70.219,
+    "lng": -132.429,
+    "video": {
+      "yt_id": "OjvAKq0ESZQ",
+      "yt_user": "guide4left",
+      "start": "2:03",
+      "end": "2:16"
+    }
+  },
+  {
+    "id": 8,
+    "type": "Easter Eggs",
+    "title": "Underwater UFO",
+    "notes": "",
+    "order": 1,
+    "lat": 84.091,
+    "lng": -116.521,
+    "video": {
+      "yt_id": "OjvAKq0ESZQ",
+      "yt_user": "guide4left",
+      "start": "2:16",
+      "end": "2:46"
+    }
+  },
+  {
+    "id": 7,
+    "type": "Easter Eggs",
+    "title": "Ghost",
+    "notes": "",
+    "order": 1,
+    "lat": 82.011,
+    "lng": -94.790,
+    "video": {
+      "yt_id": "OjvAKq0ESZQ",
+      "yt_user": "guide4left",
+      "start": "2:46",
+      "end": "3:19"
+    }
+  },
+  {
+    "id": 6,
+    "type": "Easter Eggs",
+    "title": "James Bond's car",
+    "notes": "Available in Deep Inside and Pack Man missions only",
+    "order": 1,
+    "lat": 67.892,
+    "lng": -136.066,
+    "video": {
+      "yt_id": "OjvAKq0ESZQ",
+      "yt_user": "guide4left",
+      "start": "3:19",
+      "end": "4:07"
+    }
+  },
+  {
+    "id": 5,
+    "type": "Easter Eggs",
+    "title": "Max Payne's shirt",
+    "notes": "Buy this shirt in Suburban",
+    "order": 1,
+    "lat": 68.962,
+    "lng": -123.201,
+    "video": {
+      "yt_id": "OjvAKq0ESZQ",
+      "yt_user": "guide4left",
+      "start": "4:07",
+      "end": "4:25"
+    }
+  },
+  {
+    "id": 4,
+    "type": "Easter Eggs",
+    "title": "Lost reference",
+    "notes": "",
+    "order": 1,
+    "lat": 77.599,
+    "lng": -84.243,
+    "video": {
+      "yt_id": "OjvAKq0ESZQ",
+      "yt_user": "guide4left",
+      "start": "4:25",
+      "end": "5:13"
+    }
+  },
+  {
+    "id": 3,
+    "type": "Easter Eggs",
+    "title": "Gone in 60 seconds",
+    "notes": "Available in Deep Inside mission only",
+    "order": 1,
+    "lat": 64.751,
+    "lng": -119.960,
+    "video": {
+      "yt_id": "OjvAKq0ESZQ",
+      "yt_user": "guide4left",
+      "start": "5:13",
+      "end": "5:32"
+    }
+  },
+  {
+    "id": 2,
+    "type": "Easter Eggs",
+    "title": "CJ, Big Smoke and Ryder",
+    "notes": "Available in Hood Safari mission only",
+    "order": 1,
+    "lat": 62.212,
+    "lng": -123.970,
+    "video": {
+      "yt_id": "OjvAKq0ESZQ",
+      "yt_user": "guide4left",
+      "start": "5:32",
+      "end": "5:57"
+    }
+  },
+  {
+    "id": 99,
+    "type": "Easter Eggs",
+    "title": "Flying UFO",
+    "notes": "Available if you have complete 100% of the game",
+    "order": 1,
+    "lat": 79.202,
+    "lng": -100.481,
+    "video": {
+      "yt_id": "OjvAKq0ESZQ",
+      "yt_user": "guide4left",
+      "start": "5:57",
+      "end": "6:41"
+    }
+  },
+  {
+    "id": 98,
+    "type": "Easter Eggs",
+    "title": "Flying UFO",
+    "notes": "Available if you have complete 100% of the game",
+    "order": 1,
+    "lat": 78.283,
+    "lng": -145.876,
+    "video": {
+      "yt_id": "OjvAKq0ESZQ",
+      "yt_user": "guide4left",
+      "start": "6:41",
+      "end": "7:08"
+    }
+  },
+  {
+    "id": 97,
+    "type": "Easter Eggs",
+    "title": "Flying UFO",
+    "notes": "Available if you have complete 100% of the game",
+    "order": 1,
+    "lat": 82.024,
+    "lng": -120.168,
+    "video": {
+      "yt_id": "OjvAKq0ESZQ",
+      "yt_user": "guide4left",
+      "start": "7:08",
+      "end": "7:35"
+    }
+  },
+  {
+    "id": 64,
+    "type": "Easter Eggs",
+    "title": "Snowman :)",
+    "notes": "",
+    "order": 1,
+    "lat": 63.342,
+    "lng": -115.312,
+    "video": {
+      "yt_id": "OjvAKq0ESZQ",
+      "yt_user": "guide4left",
+      "start": "7:59",
+      "end": "8:15"
     }
   }
 ]

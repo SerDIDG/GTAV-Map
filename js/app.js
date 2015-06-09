@@ -119,100 +119,6 @@ $(function() {
         }
 	]);
 
-	var CategoriesView = Backbone.View.extend({
-
-		initialize: function() {
-			this.template = Handlebars.compile($('#categoriesTemplate').html());
-		},
-
-		render: function() {
-			this.$el.html(this.template({
-				categories: categories.forView()
-			}));
-			$('#typeDetails').hide();
-			return this;
-		},
-
-		events: {
-			'change input': 'toggleLocations',
-			'click .details': 'showDetails'
-		},
-
-		toggleLocations: function(e) {
-			var $e = $(e.currentTarget),
-				type = $e.val(),
-				showLocations = $e.is(':checked'),
-				models = locations.where({ type: type });
-
-			if (showLocations) {
-				Vent.trigger('locations:visible', models);
-			}
-			else {
-				Vent.trigger('locations:invisible', models);
-			}
-		},
-
-		showDetails: function(e) {
-			e.preventDefault();
-			var typeName = $(e.currentTarget).data('name');
-			this.$el.find('input[value="'+typeName+'"]').prop('checked', true).trigger('change');
-
-			var type = categories.findWhere({ name: typeName });
-
-			var details = new CategoryDetailsView({
-				el: '#typeDetails',
-				type: type
-			});
-			details.render();
-
-		}
-
-	});
-
-	var CategoryDetailsView = Backbone.View.extend({
-
-		initialize: function() {
-			this.template = Handlebars.compile($('#categoryDetailsTemplate').html());
-		},
-
-		events: {
-			'click a.back': 'goBack',
-			'click li': 'showMarker'
-		},
-
-		goBack: function(e) {
-			e.preventDefault();
-			this.$el.empty();
-			this.off();
-			$('#types').show();
-		},
-
-		showMarker: function(e) {
-			var location = locations.get($(e.currentTarget).data('id'));
-			location.highlightMarker();
-			map.panTo(location.get('marker').getPosition());
-			map.setZoom(5);
-		},
-
-		render: function() {
-			var name = this.options.type.get('name');
-			var locs = locations.where({ type: name });
-			this.$el.html(this.template({
-				type: this.options.type.toJSON(),
-				locations: _(locs).map(function(x) {
-					var d = x.toJSON();
-					if (name == 'Money') name = 'Hidden Package';
-					d.title = d.title.replace(name+' ', '');
-					return d;
-				})
-			}));
-			$('#types').hide();
-			this.$el.show();
-			return this;
-		}
-
-	});
-
 	var MapView = Backbone.View.extend({
 
 		initialize: function() {
@@ -276,7 +182,7 @@ $(function() {
 					$('div.gmnoprint').last().wrap('<div id="mapControlWrap" />');
 				}
 			});
-
+            /*
 			window.locs = [];
 			google.maps.event.addListener(map, 'rightclick', function(e) {
 				var marker = new google.maps.Marker({
@@ -291,9 +197,9 @@ $(function() {
 				if (showCoordinations) {
 					// Update/create info window
 					updateCoordinationWindow(marker);
-				};
+				}
 			});
-
+            */
 			return this;
 		},
 
@@ -402,12 +308,6 @@ $(function() {
 
 	var mapView = new MapView({
 		el: '#map'
-	});
-
-
-	var categoriesView = new CategoriesView({
-		el: '#types',
-		map: mapView.getMap()
 	});
 
 	locations.fetch().done(function() {
