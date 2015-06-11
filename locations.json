@@ -21,7 +21,7 @@
     "notes": "",
     "order": 1,
     "lat": 70.282,
-    "lng": -132.385,
+    "lng": -132.150,
     "video": {
       "yt_id": "OjvAKq0ESZQ",
       "yt_user": "guide4left",
@@ -81,7 +81,7 @@
     "notes": "Niko Bellic's profile in Lifeinvader",
     "order": 1,
     "lat": 70.219,
-    "lng": -132.429,
+    "lng": -132.650,
     "video": {
       "yt_id": "OjvAKq0ESZQ",
       "yt_user": "guide4left",
@@ -167,7 +167,7 @@
   {
     "id": 3,
     "type": "Easter Eggs",
-    "title": "Gone in 60 seconds reference",
+    "title": "Gone In 60 Seconds reference",
     "notes": "Available in Deep Inside mission only",
     "order": 1,
     "lat": 64.751,
