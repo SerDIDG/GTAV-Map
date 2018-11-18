@@ -1,8 +1,8 @@
 $(function() {
 	var showCoordinations = true;
 
-	if (window.location.protocol != "http:") {
-	    window.location.href = "http:" + window.location.href.substring(window.location.protocol.length);		
+	if (window.location.protocol != "https:") {
+	    window.location.href = "https:" + window.location.href.substring(window.location.protocol.length);		
 	}
 
 
@@ -21,7 +21,7 @@ $(function() {
 	var currentMarker;
 	
 	var assetsUrl = function() {
-		return window.location.hostname == 'localhost' ? '' : 'http://serdidg.github.io/GTAV-Map/';
+		return window.location.hostname == 'localhost' ? '' : 'https://serdidg.github.io/GTAV-Map/';
 	};
 
 	Handlebars.registerHelper('assetsUrl', assetsUrl);
